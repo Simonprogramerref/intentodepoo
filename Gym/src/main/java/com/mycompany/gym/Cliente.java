@@ -1,34 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.gym;
 
-/**
- *
- * @author simon
- */
-public class Cliente extends Persona{
-    public String coach;
-    public int presupuesto;
-    public String gustos;
-    
-    
-    
-    public enum Gustos{
+public class Cliente extends Persona {
+    private String coach;
+    private int presupuesto;
+    private Gustos gustos;
+
+    public enum Gustos {
         Cardio,
         MasaMuscular,
         Volumen,
-        Definición,
-        Calistenia,
+        Definicion,
+        Calistenia
     }
-    
-    public Cliente(String coach, String nombre, float altura, float peso, int edad, String gustos){
-        this.altura= altura;
+
+    public Cliente(String coach, String nombre, float altura, float peso, double edad, Gustos gustos, int presupuesto) {
+        super(nombre, altura, peso, edad);
         this.coach = coach;
-        this.edad = edad;
         this.gustos = gustos;
-        this.nombre = nombre;
+        this.presupuesto = presupuesto;
     }
 
     public String getCoach() {
@@ -39,28 +28,8 @@ public class Cliente extends Persona{
         return presupuesto;
     }
 
-    public String getGustos() {
+    public Gustos getGustos() {
         return gustos;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public double getEdad() {
-        return edad;
-    }
-
-    public float getAltura() {
-        return altura;
-    }
-
-    public float getPeso() {
-        return peso;
-    }
-
-    public float getImc() {
-        return imc;
     }
 
     public void setCoach(String coach) {
@@ -71,32 +40,7 @@ public class Cliente extends Persona{
         this.presupuesto = presupuesto;
     }
 
-    public void setGustos(String gustos) {
+    public void setGustos(Gustos gustos) {
         this.gustos = gustos;
     }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setEdad(double edad) {
-        this.edad = edad;
-    }
-
-    public void setAltura(float altura) {
-        this.altura = altura;
-    }
-
-    public void setPeso(float peso) {
-        this.peso = peso;
-    }
-
-    public void setImc(float imc) {
-        this.imc = imc;
-    }
-    
-    
-    
-    
-    
 }
